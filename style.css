@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+
+   
+}
+:root {
+    --cl1:#222831;
+    --cl2:#393e46;
+    --cl3:#d65a31;
+    --cl4:#eeeeee;
+    --cl5:#4fce4b;
+}
+body {
+    height:100%;
+    background-color: var(--cl1);
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+/* Add your custom styles here */
+.nav{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: var(--cl2);
+  z-index: 999;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 50px;
+}
+.popup{
+  position: absolute;
+  top: -100%;
+  right: 20px;
+  background-color: var(--cl2);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  transition: .4s all ease;
+  gap: 10px;
+}
+.nav .logo{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: none;
+  justify-content: center;
+
+}
+.logo p{
+  color: var(--cl4);
+  font-weight: bold;
+  font-size: 16px;
+}
+.logo p span{
+  color: var(--cl3);
+}
+.hamburger{
+  color: var(--cl3);
+  cursor: pointer;
+  font-size: 22px;
+}
+.popup button{
+  border-radius: 5px;
+  background-color: var(--cl3);
+  color: var(--cl4);
+  cursor: pointer;
+  height: 40px;
+  width: 150px;
+  outline: transparent;
+  border: none;
+}
+.popup button:hover{
+  background-color: var(--cl4);
+  color: var(--cl3);
+}
+.show_options{
+  top: 80px ;
+  z-index: 100;
+}
+.main{
+  display: grid;
+  height: 100%;
+  gap: 20px;
+  grid-template-columns: 1fr auto;
+  padding: 20px;
+}
+
+.left_on_text{
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.left_on_text .text_and_type{
+  background: var(--cl2);
+  color: var(--cl4);
+  border-radius: 10px;
+  padding: 30px;
+  letter-spacing: 1.4px;
+}
+.text_and_type .paragraph-container{
+  font-size:20px;
+
+}
+
+.correct{
+  color: var(--cl5);
+}
+.incorrect{
+  color: var(--cl3);
+  border-bottom: 1px solid #d65a31;
+}
+.score_view{
+  height: 100%;
+  width: 300px;
+  background-color: var(--cl2);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+}
+.score_view .gif{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--cl4);
+  text-align: center;
+}
+.score_view .gif img{
+  height: 100px;
+  width: 100px;
+}
+
+.score_view .view_box{
+  background-color: var(--cl1);
+  padding: 10px;
+  width: 70%;
+  border-radius: 5px;
+  color: #d65a31;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.view_box label{
+  color: var(--cl4);
+}
+.left_on_text input{
+  z-index: -999;
+  opacity: 0;
+  position: absolute;
+
+}
+.left_on_text .button_selections{
+  display: flex;
+  border-radius: 5px ;
+  width: 100%;
+  background-color: var(--cl2);
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+.button_selections .select{
+  padding: 2px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 24px;
+  height: 30px;
+  width: 250px;
+  color: #eeeeee;
+}
+.select select{
+  height: 30px;
+  width: 150px;
+  cursor: pointer;
+  outline: transparent;
+  background-color: var(--cl3);
+  color: var(--cl4);
+  padding: 5px;
+  border: none;
+  appearance: none;
+  border-radius: 4px;
+}
+.reset_btn button{
+  height: 35px;
+  width: 150px;
+  text-transform: capitalize;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  outline: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  color: var(--cl2);
+  background-color: var(--cl5);
+}
+@media(max-width:1024px){
+  .left_on_text .text_and_type .paragraph-container{
+    font-size: calc(1vw,20px);
+  }
+  .score_view{width: 250px;}
+  .score_view .view_box{width: 90%;}
+}

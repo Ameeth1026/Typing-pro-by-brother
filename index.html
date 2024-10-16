@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/images/logo.png" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <img src="./images/logo.png" width="50px" />
+          <p>Typing <span>Pro.</span></p>
+        </div>
+
+        <div class="hamburger">
+          <i class="fas fa-bars-staggered"></i>
+        </div>
+        <div class="popup">
+          <button>History</button>
+          <button>Themes</button>
+        </div>
+      </nav>
+
+      <div class="main">
+        <div class="left_on_text">
+          <input
+            type="text"
+            placeholder="type here"
+            id="typing_input"
+            autocomplete="off"
+          />
+          <div class="text_and_type">
+            <!-- ======= -->
+          </div>
+          <div class="button_selections">
+            <div class="select select_1">
+              <label for="select_text">
+                <i class="fas fa-spell-check"></i>
+              </label>
+              <select id="select_text">
+                <option value="none">normal</option>
+                <option value="capitalize">Capitalize</option>
+                <option value="lowercase">Lowercase</option>
+                <option value="uppercase">Uppercase</option>
+                <option value="no_punctuation_lowercase">
+                  No Punctuation Lowercase
+                </option>
+                <option value="no_punctuation_uppercase">
+                  No Punctuation Uppercase
+                </option>
+              </select>
+            </div>
+
+            <div class="select select_2">
+              <label for="select_time">
+                <i class="fas fa-hourglass-half"></i>
+              </label>
+              <select id="select_time">
+                <option value="1">1 minutes</option>
+                <option value="2">2 minutes</option>
+                <option value="3">3 minutes</option>
+                <option value="5">5 minutes</option>
+                <option value="10">10 minutes</option>
+              </select>
+            </div>
+
+            <div class="reset_btn">
+              <button id="resetButton">reset</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="score_view">
+          <div class="gif">
+            <img id="accuracy_gif" src="/images/logo.png" alt="random_gif" />
+            <p id="review_text">Result of your performance.</p>
+          </div>
+
+          <div id="timer" class="view_box">
+            <label for="time">
+              <i class="fas fa-clock"></i>
+            </label>
+            <p id="time"></p>
+          </div>
+          <div class="wpm_view view_box">
+            <label for="wpm">Wpm</label>
+            <p id="wpm">0</p>
+          </div>
+          <div class="accuracy view_box">
+            <label for="accuracy">
+              <i class="fas fa-circle-check"></i>
+            </label>
+            <p id="accuracy">0.00%</p>
+          </div>
+          <div class="cpm_view view_box">
+            <label for="cpm">Cpm</label>
+            <p id="cpm">0</p>
+          </div>
+          <div class="mistake view_box">
+            <label for="mistake">Mistakes</label>
+            <p id="mistake">0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const popup = document.querySelector(".popup");
+
+      hamburger.addEventListener("click", () => {
+        popup.classList.toggle("show_options");
+      });
+    </script>
+
+    <script src="assets/parafact.js"></script>
+    <script src="assets/array_of_emoji.js"></script>
+
+    <script type="module" src="script.js"></script>
+
+  </body>
+</html>
